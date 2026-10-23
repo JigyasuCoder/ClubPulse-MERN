@@ -1,1 +1,1 @@
-# ClubPulse
+# ClubPulse-MERN
