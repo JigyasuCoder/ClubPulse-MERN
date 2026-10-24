@@ -106,9 +106,12 @@ export default function AdminDashboard() {
   const starColors = ['#ef4444', '#f97316', '#eab308', '#84cc16', '#22c55e'];
 
   return (
-    <div className="min-h-screen p-6 max-w-7xl mx-auto space-y-6">
+  <div className="min-h-screen p-6 max-w-7xl mx-auto space-y-6 bg-[#0b0c1b] text-slate-100 font-sans relative overflow-hidden">
+    {/* COSMIC TWILIGHT AMBIENT GLOW ACCENTS */}
+    <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
+    <div className="absolute bottom-10 left-10 w-96 h-96 bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none" />
       {/* Header Bar */}
-      <div className="flex justify-between items-center bg-slate-800 p-4 rounded-2xl border border-slate-700">
+      className="flex justify-between items-center bg-[#12132b]/80 backdrop-blur-md p-4 rounded-2xl border border-purple-500/20 shadow-xl relative z-10"
         <div className="flex items-center gap-3">
           {selectedEvent && (
             <button
@@ -151,7 +154,7 @@ export default function AdminDashboard() {
           </div>
 
           {events.length === 0 ? (
-            <div className="bg-slate-800 p-12 text-center rounded-2xl border border-slate-700 text-slate-400">
+            <div className="bg-[#12132b]/90 border-purple-500/20 p-12 text-center rounded-2xl border border-slate-700 text-slate-400">
               No events found. Click "+ Create Event" to get started.
             </div>
           ) : (
@@ -160,7 +163,7 @@ export default function AdminDashboard() {
                 <div
                   key={evt._id}
                   onClick={() => setSelectedEvent(evt)}
-                  className="bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-indigo-500/80 p-5 rounded-2xl shadow-lg transition hover:-translate-y-1 cursor-pointer flex flex-col justify-between space-y-4"
+                  className="bg-[#12132b]/90 border-purple-500/20/90 hover:bg-[#12132b]/90 border-purple-500/20 border border-slate-700 hover:border-indigo-500/80 p-5 rounded-2xl shadow-lg transition hover:-translate-y-1 cursor-pointer flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-2">
                     <div className="flex justify-between items-start">
@@ -196,7 +199,7 @@ export default function AdminDashboard() {
         <div className="space-y-6">
           {/* Top Event Banner */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-slate-800 p-5 rounded-2xl border border-slate-700 md:col-span-2 space-y-3">
+            <div className="bg-[#12132b]/90 border-purple-500/20 p-5 rounded-2xl border border-slate-700 md:col-span-2 space-y-3">
               <div className="flex justify-between items-start">
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-400">{selectedEvent.eventType}</span>
                 <button
@@ -224,7 +227,7 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <div className="bg-slate-800 p-5 rounded-2xl border border-slate-700 flex flex-col items-center justify-center text-center">
+            <div className="bg-[#12132b]/90 border-purple-500/20 p-5 rounded-2xl border border-slate-700 flex flex-col items-center justify-center text-center">
               <QRCodeSVG
                 value={`${window.location.origin}/feedback/${selectedEvent._id}`}
                 size={110}
@@ -235,7 +238,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* RATING DISTRIBUTION GRAPHS (TIER 1 & TIER 2 SEPARATED) */}
-          <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 space-y-6">
+          <div className="bg-[#12132b]/90 border-purple-500/20 p-6 rounded-2xl border border-slate-700 space-y-6">
             <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">
               Rating Distribution Analytics
             </h2>
@@ -328,7 +331,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* CATEGORIZED FEEDBACK LIST & DRILL-DOWN */}
-          <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 space-y-4">
+          <div className="bg-[#12132b]/90 border-purple-500/20 p-6 rounded-2xl border border-slate-700 space-y-4">
             <div className="flex flex-col md:flex-row justify-between gap-4 items-center">
               <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
                 <Filter className="w-4 h-4 text-slate-400" />
@@ -427,7 +430,7 @@ export default function AdminDashboard() {
       {/* FULL FEEDBACK INSPECTION MODAL */}
       {inspectFeedback && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-slate-800 w-full max-w-xl p-6 rounded-2xl border border-slate-700 shadow-2xl max-h-[85vh] overflow-y-auto space-y-4">
+          <div className="bg-[#12132b]/90 border-purple-500/20 w-full max-w-xl p-6 rounded-2xl border border-slate-700 shadow-2xl max-h-[85vh] overflow-y-auto space-y-4">
             <div className="flex justify-between items-center pb-3 border-b border-slate-700">
               <div>
                 <h3 className="font-bold text-base text-white">Attendee Feedback Submission</h3>
