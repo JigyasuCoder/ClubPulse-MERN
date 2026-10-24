@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Trigger production build
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
 });
@@ -15,7 +16,6 @@ API.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Intercept 401 errors gracefully without instantly breaking state
 API.interceptors.response.use(
   (response) => response,
   (error) => {
