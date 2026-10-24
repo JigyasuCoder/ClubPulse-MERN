@@ -39,7 +39,7 @@ router.post('/query', auth, async (req, res) => {
           content: promptText,
         },
       ],
-      model: 'llama-3.1-8b-instant',
+      model: 'openai/gpt-oss-120b',
     });
 
     const answer = chatCompletion.choices?.[0]?.message?.content || 'No insights generated.';
