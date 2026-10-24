@@ -21,7 +21,7 @@
     "groq-sdk": "0.9.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.11.3",
-    "sentiment": "^5.0.2",
+    "sentiment": "^5.0.2"
     
   },
   "devDependencies": {
